@@ -5,12 +5,14 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prod": "rm -rf dist && webpack --progress",
+    "prod": "rm -rf dist && webpack --progress && printf 'galaxias.app' > dist/CNAME",
+    "deploy": "gh-pages -d dist",
     "dev": "rm -rf dist && NODE_ENV=dev webpack --no-unsafe-inline --progress",
     "serve": "rm -rf dist && NODE_ENV=dev webpack-dev-server --no-unsafe-inline --hot --host 0.0.0.0",
     "serve-prod": "rm -rf dist && webpack-dev-server --no-unsafe-inline --hot --host 0.0.0.0"
   },
   "author": "",
+  "homepage": "https://spintronik.github.io/galaxias.app",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.9.6",
@@ -20,6 +22,7 @@
     "bulma": "^0.9.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
+    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.3.0",
     "marked": "^1.1.1",
     "mini-css-extract-plugin": "^0.9.0",
